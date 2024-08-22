@@ -1,0 +1,15 @@
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\bin\Debug\net7.0\MyShop.DataAccess.deps.json
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\bin\Debug\net7.0\MyShop.DataAccess.dll
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\bin\Debug\net7.0\MyShop.DataAccess.pdb
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\bin\Debug\net7.0\MyShop.Entities.dll
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\bin\Debug\net7.0\MyShop.Entities.pdb
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.DataAccess.csproj.AssemblyReference.cache
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.DataAccess.AssemblyInfo.cs
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.D.2D72841A.Up2Date
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.DataAccess.dll
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\refint\MyShop.DataAccess.dll
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\MyShop.DataAccess.pdb
+C:\Users\Win10\Desktop\MyShop\MyShop.DataAccess\obj\Debug\net7.0\ref\MyShop.DataAccess.dll

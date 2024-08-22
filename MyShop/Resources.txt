@@ -1,0 +1,5 @@
+AdminLTE =>Dashboard
+
+DataTables=>Jquery(index Product)
+SweetAlert2 =>delete Product
+startbootstrap =>layout

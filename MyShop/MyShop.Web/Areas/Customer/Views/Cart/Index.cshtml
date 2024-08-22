@@ -1,0 +1,146 @@
+﻿@model ShoppingCartVM
+@{
+    Layout = "_MyLayout";
+}
+
+@section cart {
+    <br />
+    <br />
+    <br />
+    <html>
+    <head>
+        <title>Your Cart</title>
+        <br />
+        <br />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                background-color: #e9e3db;
+            }
+
+            .block-heading h2 {
+                color: #D81B60 /* Darker shade of pink for the heading */
+            }
+
+            .table thead {
+                background-color: #e9e3db; /* Baby pink for the table header */
+            }
+
+            .card-header {
+                background-color: #F06292; /* Baby pink for card header */
+            }
+
+            .btn-primary {
+                background-color: #F06292; /* Baby pink for buttons */
+                border-color: #F06292;
+            }
+
+                .btn-primary:hover {
+                    background-color: #EC407A; /* Darker pink on hover */
+                    border-color: #EC407A;
+                }
+
+            .btn-danger {
+                background-color: #EC407A; /* Stronger pink for danger buttons */
+                border-color: #EC407A;
+            }
+
+                .btn-danger:hover {
+                    background-color: #C2185B; /* Darker pink on hover */
+                    border-color: #C2185B;
+                }
+
+            .card {
+                background-color: #FFFFFF; /* White for the summary card background */
+            }
+
+            .text-white {
+                color: #FFFFFF; /* Ensure text color remains white for contrast */
+            }
+        </style>
+    </head>
+    <body>
+        <main class="page">
+            <section class="shopping-cart">
+                <div class="container">
+                    <div class="block-heading text-center">
+                        <h2>Your Cart</h2>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <!-- Product Items Table -->
+                            <div class="col-md-12 col-lg-8 text-center">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Image</th>
+                                                <th scope="col">Product</th>
+                                                <th scope="col">Quantity</th>
+                                                <th scope="col">Price</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.CartsList)
+                                            {
+                                                <tr>
+                                                    <td><img class="img-fluid mx-auto d-block" src="@item.product.Img" style="width: 100px; height: auto;"></td>
+                                                    <td>
+                                                        <strong>@item.product.Name</strong>
+                                                        <br />
+                                                        <small>@item.product.Description</small>
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group" role="group">
+                                                            <a class="btn btn-primary" asp-action="Plus" asp-route-cartid="@item.Id">+</a>
+                                                            <span style="margin:5px">@item.Count</span>
+                                                            <a class="btn btn-primary" asp-action="Minus" asp-route-cartid="@item.Id">-</a>
+                                                        </div>
+                                                    </td>
+                                                    <td>$@(item.product.Price * item.Count)</td>
+                                                    <td>
+                                                        <a asp-action="Remove" asp-route-cartid="@item.Id" class="btn btn-danger">X</a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <a class="btn btn-primary btn-lg btn-block text-center" asp-action="Index" asp-controller="Home">Continue Shopping</a>
+                                </div>
+                            </div>
+
+                            <!-- Summary Table -->
+                            <div class="col-md-12 col-lg-4">
+                                <div class="card text-center">
+                                    <div class="card-header text-white">
+                                        <h3>Summary</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-borderless text-center">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Total</td>
+                                                    <td class="text-right">$@Model.TotalCarts.ToString()</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <a class="btn btn-primary btn-lg btn-block" asp-action="Summary" asp-controller="Cart">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+}
+

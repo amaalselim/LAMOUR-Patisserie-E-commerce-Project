@@ -1,0 +1,12 @@
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\bin\Debug\net7.0\MyShop.Utilities.deps.json
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\bin\Debug\net7.0\MyShop.Utilities.dll
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\bin\Debug\net7.0\MyShop.Utilities.pdb
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\MyShop.Utilities.csproj.AssemblyReference.cache
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\MyShop.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\MyShop.Utilities.AssemblyInfoInputs.cache
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\MyShop.Utilities.AssemblyInfo.cs
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\MyShop.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\MyShop.Utilities.dll
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\refint\MyShop.Utilities.dll
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\MyShop.Utilities.pdb
+C:\Users\Win10\Desktop\MyShop\MyShop.Utilities\obj\Debug\net7.0\ref\MyShop.Utilities.dll

@@ -1,0 +1,151 @@
+﻿@model ShoppingCartVM
+@using Microsoft.Extensions.Options
+@inject IOptions<MyShop.Utilities.StripeData> Stripe
+@{
+    Layout = "_MyLayout";
+}
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <title>Snippet - BBBootstrap</title>
+        <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+        <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <link href="~/css/summary.css" rel="stylesheet" />
+    </head>
+    <body className='snippet-body'>
+
+<div class="wrapper">
+    <div class="h5 large">Billing Address</div>
+    <form method="post">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-10 offset-lg-0 offset-md-2 offset-sm-1">
+            <div class="mobile h5">Billing Address</div>
+            <div id="details" class="bg-white rounded pb-5">
+                    <div class="form-group">
+                        <label class="text-muted">Name</label>
+                            <input type="text" value="@Model.orderHeader.Name" class="form-control">
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>City</label>
+                                <div class="d-flex jusify-content-start align-items-center rounded p-2">
+                                        <input type="text" value="@Model.orderHeader.City">
+                                    <span class="fas fa-check text-success pr-2"></span>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <div class="d-flex jusify-content-start align-items-center rounded p-2">
+                                        <input type="text" value="@Model.orderHeader.Phone">
+                                        <span class="fas fa-check text-success pr-2"></span>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Address</label>
+                                <div class="d-flex jusify-content-start align-items-center rounded p-2">
+                                    <input type="text" value="@Model.orderHeader.Address">
+                                    <span class="fas fa-check text-success pr-2"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-8 col-sm-10 offset-lg-0 offset-md-2 offset-sm-1 pt-lg-0 pt-3">
+            <div id="cart" class="bg-white rounded">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="h6">Cart Summary</div>
+                    <div class="h6">
+                        <a asp-action="Index" asp-controller="Cart">Edit</a>
+                    </div>
+                </div>
+                @foreach(var item in Model.CartsList)
+                {
+                    <div class="d-flex jusitfy-content-between align-items-center pt-3 pb-2 border-bottom">
+                        
+                            <div class="item pr-2">
+                                <img src="@item.product.Img"
+                                     alt="" width="80" height="80">
+                                <div class="number">@item.Count</div>
+                            </div>
+                            <div class="d-flex flex-column px-3">
+                                <b class="h5">@item.product.Name</b>
+                                @* <a href="#" class="h8 text-primary">@item.Product.Description</a> *@
+                            </div>
+                            <div class="ml-auto">
+                                <b class="h5">$@item.product.Price</b>
+                            </div>
+                        
+                    </div>
+                }
+              @*  <div class="my-3">
+                    <input type="text" class="w-100 form-control text-center" placeholder="Gift Card or Promo Card">
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="display-5">Subtotal</div>
+                        <div class="ml-auto font-weight-bold">@Model.orderHeader.TotalPrice</div>
+                </div>
+                <div class="d-flex align-items-center py-2 border-bottom">
+                    <div class="display-5">Shipping</div>
+                    <div class="ml-auto font-weight-bold">$12.00</div>
+                </div> *@
+                <div class="d-flex align-items-center py-2">
+                    <div class="display-5">Total</div>
+                    <div class="ml-auto d-flex">
+                        <div class="text-primary text-uppercase px-3">usd</div>
+                        @{
+                                var x = @Model.orderHeader.TotalPrice + 12;
+                        }
+                        <div class="font-weight-bold">@x</div>
+                    </div>
+                </div>
+            </div>
+           @*  <p class="text-muted">Need help with an order?</p>
+            <p class="text-muted"><a href="#" class="text-danger">Hotline:</a>+314440160 (International)</p>*@
+            <div class="row pt-lg-3 pt-2 buttons mb-sm-0 mb-2">
+                <div class="col-md-6">
+                        <div class="btn text-uppercase"><a href="/Customer/Home">back to shopping</a></div>
+                </div> 
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <div class="btn text-white ml-auto">
+                         <button type="submit" class="btn btn-success"> <span class="fas fa-lock">    </span>  Place Order</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-muted pt-3" id="mobile">
+                <span class="fas fa-lock"></span>
+                Your information is save
+            </div>
+        
+        </div>
+        </form>
+    </div>
+    <div class="text-muted">
+        <span class="fas fa-lock"></span>
+        Your information is save
+    </div>
+</div>
+                                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript' src='#'></script>
+                                <script type='text/javascript'>#</script>
+                                <script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
+                                myLink.addEventListener('click', function(e) {
+                                  e.preventDefault();
+                                });</script>
+                            
+                                </body>
+</html>
