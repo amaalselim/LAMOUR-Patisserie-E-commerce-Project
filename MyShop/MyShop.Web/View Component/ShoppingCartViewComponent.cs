@@ -15,6 +15,7 @@ namespace myshop.Web.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
+            HttpContext.Session.Clear();
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
 
